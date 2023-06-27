@@ -24,6 +24,14 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        parent::boot();
+
+        /** @var UrlGenerator $url */
+        $url = $this->app['url'];
+
+        // Force the application URL
+        $url->forceRootUrl(config('app.url'));
+
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
