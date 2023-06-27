@@ -2,6 +2,7 @@
 
 return [
 
+    'cache' => false,
     /*
     |--------------------------------------------------------------------------
     | View Storage Paths
@@ -14,7 +15,7 @@ return [
     */
 
     'paths' => [
-        resource_path('views'),
+        resource_path('views')
     ],
 
     /*
@@ -28,9 +29,6 @@ return [
     |
     */
 
-    'compiled' => env(
-        'VIEW_COMPILED_PATH',
-        realpath(storage_path('framework/views'))
-    ),
-
+    /* For serverless ambient this configuration needs to go to /tmp folder */
+    'compiled' => '/tmp'
 ];
