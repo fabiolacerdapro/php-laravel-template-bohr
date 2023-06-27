@@ -1,7 +1,7 @@
 
-# php-template
+# php-larave-template
 
-Experimental PHP runtime template for BOHR.
+Experimental Laravel 10 PHP runtime template for BOHR.
 
 Supported php versions:
 
@@ -12,7 +12,14 @@ Supported php versions:
 
 Needed BOHR environment variables to be configured:
 
-BOHR_FUNCTION_RUNTIME = provided.al2
-BOHR_WEB_ADAPTER = php
-BOHR_WEB_ADAPTER_TYPE = php
-BOHR_WEB_ADAPTER_PHP_VERSION = (php7.4 | php8.0 | php8.1 | php8.2)
+- BOHR_FUNCTION_RUNTIME = provided.al2
+- BOHR_WEB_ADAPTER = php
+- BOHR_WEB_ADAPTER_TYPE = php
+- BOHR_WEB_ADAPTER_PHP_VERSION = (php7.4 | php8.0 | php8.1 | php8.2)
+- REDIS_HOST=""
+- REDIS_PASSWORD=""
+- REDIS_PORT=""
+- CACHE_DRIVER="redis"
+- SESSION_DRIVER="redis"
+
+We recommend upstash for redis cache.
